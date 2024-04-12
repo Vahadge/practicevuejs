@@ -5,6 +5,8 @@ import Navbar from './components/Navbar.vue'
 </script>
 
 <template>
-  <Navbar class="z-100" />
-    <RouterView />
+  <div class="z-9999 w-full">
+  <Navbar /></div>
+  <div class="z-100 ">
+    <RouterView /></div>
 </template>
