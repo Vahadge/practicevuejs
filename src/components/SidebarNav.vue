@@ -1,16 +1,17 @@
 <template>
 
-
-<div class="bg-blue-600 ">
-  <span class="absolute text-white text-4xl top-10 left-4 cursor-pointer" @click="ToggleSideNav()">
+<span class="text-white text-4xl left-4 cursor-pointer" @click="ToggleSideNav()">
     <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md text-sm">open sidebar</i>
   </span>
+<div class="bg-blue-600">
+  
   <div class="sidebar fixed top-0 bottom-0  duration-1000
     p-2 w-[300px] overflow-y-auto text-center bg-gray-900 shadow h-screen" :class="IsSidebarVisible ? 'left-0' : 'left-[-100%]'">
     <div class="text-gray-100 text-xl">
       <div class="p-2.5 mt-1 flex items-center rounded-md ">
-        <i class="bi bi-app-indicator px-2 py-1 bg-blue-600 rounded-md" @click="ToggleSideNav"></i>
-        <h1 class="text-[15px]  ml-3 text-xl text-gray-200 font-bold">Tailwindbar</h1>
+         <span class="absolute text-white text-4xl mb-5 left-4 cursor-pointer" @click="ToggleSideNav()">
+    <i class="bi bi-filter-left px-2 bg-blue-500 rounded-md text-sm">close sidebar</i>
+  </span>
       </div>
       <hr class="my-2 text-gray-600">
 

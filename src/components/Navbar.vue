@@ -32,7 +32,7 @@
 
 
     <ul
-      class="navbartop sm:border-t-orange-200 z-9999  text-gray-300 md:flex md:items-center md-px-0 px-3 md:pb-0 pb-10 md:static 
+      class="navbartop sm:border-t-orange-200 text-gray-300 md:flex md:items-center md-px-0 px-3 md:pb-0 pb-10 md:static 
       relative md:w-auto w-full top-14 duration-500 ease-in lg:text-black md:text-black font-bold
       "
       :class="navtoggle ? 'left-0 relative' : 'left-[-100%]'"
