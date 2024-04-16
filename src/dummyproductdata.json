@@ -1,44 +1,157 @@
-[
-    {
-        "id": 1,
-        "name": "product 1",
+ {
+    "products": [
+      {
+        "value": 1,
+        "text": "product 1",
         "price": 100,
         "quantity": 10,
         "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367"
-    },
-    {
-        "id": 2,
-        "name": "product 2",
+      },
+      {
+        "value": 2,
+        "text": "product 2",
         "price": 200,
         "quantity": 20,
         "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367"
-    },
-    {
-        "id": 3,
-        "name": "product 3",
+      },
+      {
+        "value": 3,
+        "text": "product 3",
         "price": 300,
         "quantity": 30,
         "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367"
-    },
-    {
-        "id": 4,
-        "name": "product 4",
+      },
+      {
+        "value": 4,
+        "text": "product 4",
         "price": 400,
         "quantity": 40,
         "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367"
-    },
-    {
-        "id": 5,
-        "name": "product 5",
+      },
+      {
+        "value": 5,
+        "text": "product 5",
         "price": 500,
         "quantity": 50,
         "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367"
-    },
-    {
-        "id": 6,
-        "name": "product 6",
+      },
+      {
+        "value": 6,
+        "text": "product 6",
         "price": 600,
         "quantity": 60,
         "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367"
-    }
-]
+      }
+    ],
+
+    "Items": [
+      {
+        "value": 1,
+        "text": "items 1",
+        "price": 100,
+        "quantity": 10,
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367",
+        "transactionid": 1
+      },
+      {
+        "value": 2,
+        "text": "items 2",
+        "price": 200,
+        "quantity": 20,
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/items/1_2_1024x1024.jpg?v=1626609367",
+        "transactionid": 1
+      },
+      {
+        "value": 3,
+        "text": "item 3",
+        "price": 300,
+        "quantity": 30,
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/items/1_2_1024x1024.jpg?v=1626609367",
+        "transactionid": 1
+      },
+      {
+        "value": 4,
+        "text": "item 4",
+        "price": 400,
+        "quantity": 40,
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367",
+        "transactionid": 1
+      },
+      {
+        "value": 5,
+        "text": "item 5",
+        "price": 500,
+        "quantity": 50,
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367",
+        "transactionid": 1
+      },
+      {
+        "value": 6,
+        "text": "item 6",
+        "price": 600,
+        "quantity": 60,
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367",
+        "transactionid": 1
+      }
+    ],
+
+    "Suppliers": [
+      {
+        "id": 1,
+        "name": "supplier 1",
+        "email": "supplieremail1@gmail.com",
+        "isactive": 1
+      }
+    ],
+    "Customers": [
+      {
+        "id": 1,
+        "name": "Customer 1",
+        "email": "Customeremail1@gmail.com",
+        "customertype": "Individual",
+        "isactive": 1
+      }
+    ],
+
+    "Transactions": [
+      {
+        "id": 1,
+        "createdby": 1,
+        "totalprice": 5000,
+        "balance": 0,
+        "supplierid": 1
+      }
+    ],
+
+    "Users": [
+      {
+        "id": 1,
+        "name": "user 1",
+        "email": "email1@gmail.com",
+        "password": "password1",
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367",
+        "token": "usertoken_nakjdkajsdkljsakldjsakldjklsadjqjekqljweklqjwkejkwqjeklqwjekqwljeklqwjeklqwjeljqweklqw"
+      },
+
+      {
+        "id": 2,
+        "name": "user 2",
+        "email": "email2@gmail.com",
+        "password": "password2",
+        "img": "https://cdn.shopify.com/s/files/1/0055/8636/7288/products/1_2_1024x1024.jpg?v=1626609367",
+        "token": "usertoken_nakjdkajsdkljsakldjsakldjklsadjqjekqljweklqjwkejkwqjeklqwjekqwljeklqwjeklqwjeljqweklqw"
+      }
+    ],
+    "ItemProductMapping": [
+      {
+        "id": 1,
+        "itemId": 1,
+        "productId": 1
+      },
+      {
+        "id": 2,
+        "itemId": 2,
+        "productId": 2
+      }
+    ]
+  }

@@ -1,8 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-   <nav class="flex" aria-label="Breadcrumb">
-    <ol role="list" class="flex items-center space-x-2">
-      <li v-for="(item, index) in  JSON.parse( props.breadcrumblinks)" :key="index">
+   <div class="lg:grid grid-flow-row lg:grid-flow-col md-2 mt-2 bg-gray-200 text-black rounded-lg p-4 hidden">
+      <div v-for="(item, index) in  JSON.parse( props.breadcrumblinks)" :key="index">
         <div class="flex items-center">
           <svg
             v-if="index != 0"
@@ -25,21 +24,16 @@
           <router-link
             v-else
             :to="item.to"
-            class="ml-2 text-sm font-medium text-gray-500 hover:text-gray-700"
+            class="ml-2 text-lg font-medium text-gray-500 hover:text-gray-700"
           >
             {{ item.name }}
           </router-link>
         </div>
-      </li>
-    </ol>
-  </nav>
+      </div>
+    </div>
 </template>
 <script setup>
-
     const props = defineProps(["breadcrumblinks"]);
-
-    // console.log(props);
     
-
-
+    // console.log(props);
 </script>

@@ -1,132 +1,205 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="form mt-10">
-    <h1
-      class="justify-center flex text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
-    >
-      Add Customer
-    </h1>
-    <form class="max-w-md mx-auto">
-      <div class="relative z-0 w-full mb-5 group">
-        <input
-          type="email"
-          name="floating_email"
-          id="floating_email"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label
-          for="floating_email"
-          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >Email address</label
+    <div class="lg:m-10 lg:p-5">
+  <custommodal title="Add Items" :showModal="toggleModal" @some-event="ToggleModal">
+    <template v-slot:body>
+      <div class="form mt-5">
+        <h1
+          class="justify-center flex text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
         >
-      </div>
-      <div class="relative z-0 w-full mb-5 group">
-        <input
-          type="password"
-          name="floating_password"
-          id="floating_password"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label
-          for="floating_password"
-          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >Password</label
-        >
-      </div>
-      <div class="relative z-0 w-full mb-5 group">
-        <input
-          type="password"
-          name="repeat_password"
-          id="floating_repeat_password"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label
-          for="floating_repeat_password"
-          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >Confirm password</label
-        >
-      </div>
-      <div class="grid md:grid-cols-2 md:gap-6">
-        <div class="relative z-0 w-full mb-5 group">
-          <input
+          Add Items
+        </h1>
+        <form class="max-w-md mx-auto">
+          <textbox
             type="text"
-            name="floating_first_name"
-            id="floating_first_name"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
+            name="itemname"
+            id="itemname"
+            placeholder=""
             required
-          />
-          <label
-            for="floating_first_name"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >First name</label
-          >
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-          <input
-            type="text"
-            name="floating_last_name"
-            id="floating_last_name"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
+            labeltext="Item Name"
+          ></textbox>
+          <dropdown
+            id="category"
+            labeltext="Category"
+            :options="categories"
+            class="mt-5"
+          ></dropdown>
+          <dropdown id="unit" labeltext="unit" :options="units" class="mt-5"></dropdown>
+          <textbox
+            type="number"
+            name="baseprice"
+            id="baseprice"
+            placeholder=""
             required
-          />
-          <label
-            for="floating_last_name"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Last name</label
-          >
-        </div>
+            labeltext="Base price"
+          ></textbox>
+        </form>
       </div>
-      <div class="grid md:grid-cols-2 md:gap-6">
-        <div class="relative z-0 w-full mb-5 group">
-          <input
-            type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            name="floating_phone"
-            id="floating_phone"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            for="floating_phone"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Phone number (123-456-7890)</label
-          >
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-          <input
-            type="text"
-            name="floating_company"
-            id="floating_company"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            for="floating_company"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Company (Ex. Google)</label
-          >
-        </div>
+    </template>
+    <template v-slot:footer>
+      <div class="flex justify-center">
+        <custombutton class="m-1 text-white bg-blue-700 hover:bg-blue-800"> Save </custombutton>
+        <custombutton class="m-1 text-white bg-gray-700 hover:bg-blue-800"> close </custombutton>
       </div>
-      <button
-        type="submit"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    </template>
+  </custommodal>
+  <div class="z-40 border-solid border-2 border-indigo-300 p-5 m-2 rounded-lg">
+    <h1 class="flex text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white p-2">Search</h1>
+    <div class="box mt-4 border-red-200 grid lg:grid-flow-col lg:grid-cols-4 sm:grid-flow-row">
+      <textbox
+        id="search_id"
+        placeholder="search by Id"
+        type="number"
+        value=""
+        class="searchinput"
+      />
+      <textbox id="search_name" placeholder="name" type="text" value="" class="searchinput" />
+      <textbox
+        id="search_category"
+        placeholder="Category"
+        type="text"
+        value=""
+        class="searchinput"
+      />
+      <textbox
+        id="search_id"
+        placeholder="search by Id"
+        type="number"
+        value=""
+        class="searchinput"
+      />
+    </div>
+    <div class="">
+      <custombutton class="m-1 max-w-20 text-white bg-blue-700 hover:bg-blue-800"
+        >Search</custombutton
       >
-        Submit
-      </button>
-    </form>
+      <custombutton
+        class="m-1 max-w-sm text-white bg-blue-700 hover:bg-blue-800"
+        @click="ToggleModal"
+        >Add new</custombutton
+      >
+    </div>
   </div>
-  <div class="listview"></div>
+
+  <div class="listview m-2 border-solid border-2 border-indigo-300 rounded-lg">
+    <h1 class="flex text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white p-2">Existing items</h1>
+    <vue3-datatable
+      :rows="rows"
+      :columns="cols"
+      :loading="loading"
+      :totalRows="total_rows"
+      :isServerMode="true"
+      :pageSize="params.pagesize"
+      @change="changeServer"
+    >
+    <template #id="data">
+                <strong>{{ data.value.id }}</strong>
+            </template>
+            <template #name="data">
+                <strong>{{ data.value.name }}</strong>
+            </template>
+            <template #actions="data">
+                <div class="flex gap-4">
+                    <button type="button" class="btn btn-success !py-1" @click="viewUser(data.value)">View</button>
+                    <button type="button" class="btn btn-danger !py-1" @click="deleteUser(data.value)">Delete</button>
+                </div>
+            </template>
+    </vue3-datatable>
+  </div>
+</div>
 </template>
 <script setup>
+import textbox from '../common/textbox.vue'
+import custombutton from '../common/button.vue'
+import dropdown from '../common/dropdown.vue'
+import custommodal from '../common/modal.vue'
 
+import Vue3Datatable from '@bhplugin/vue3-datatable'
+import products from '../../dummyproductdata.json'
+import '@bhplugin/vue3-datatable/dist/style.css'
+
+import { ref, reactive, onMounted } from 'vue'
+
+let toggleModal = ref(false)
+const categories = ref([
+  {
+    value: '1',
+    text: 'Category 1'
+  },
+  {
+    value: '2',
+    text: 'Category 2'
+  },
+  {
+    value: '3',
+    text: 'Category 3'
+  }
+])
+
+const units = ref([
+  {
+    value: 'kg',
+    text: 'kg',
+    value: 'l',
+    text: 'l'
+  },
+  {
+    value: 'ml',
+    text: 'ml'
+  },
+  {
+    value: 'g',
+    text: 'g'
+  },
+  {
+    value: 'pcs',
+    text: 'pcs'
+  }
+])
+
+const loading = ref(true)
+const total_rows = ref(0)
+
+const params = reactive({ current_page: 1, pagesize: 10 })
+const rows = ref(null)
+
+const cols = ref([
+  { field: 'id', title: 'Id' },
+  { field: 'name', title: 'name' },
+  { field: 'price', title: 'price' },
+  { field: 'quantity', title: 'quantity' },
+  { field: 'actions', title: 'actions' },
+])
+
+function ToggleModal(name) {
+  console.log(name)
+  toggleModal.value = !toggleModal.value
+}
+
+function getproducts() {
+  loading.value = true
+  setTimeout(() => {
+    rows.value = products
+    total_rows.value = products.length
+    loading.value = false
+  }, 1000)
+}
+
+function changeServer() {
+  loading.value = true
+  setTimeout(() => {
+    rows.value = products
+    total_rows.value = products.length
+    loading.value = false
+  }, 1000)
+}
+
+onMounted(() => {
+  getproducts()
+})
 </script>
+<style>
+.searchinput {
+  @apply p-5;
+}
+</style>

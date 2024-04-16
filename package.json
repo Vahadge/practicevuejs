@@ -13,9 +13,12 @@
   "dependencies": {
     "@bhplugin/vue3-datatable": "^1.1.4",
     "apexcharts": "^3.48.0",
+    "D": "^1.0.0",
     "pinia": "^2.1.7",
+    "u": "^0.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
+    "vue-select": "^4.0.0-beta.6",
     "vue3-apexcharts": "^1.5.2"
   },
   "devDependencies": {

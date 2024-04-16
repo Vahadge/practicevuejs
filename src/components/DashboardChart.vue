@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
 let props = defineProps(['chartwidth', 'charttype'])
 let options = {}

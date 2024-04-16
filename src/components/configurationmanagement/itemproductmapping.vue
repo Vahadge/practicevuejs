@@ -7,32 +7,23 @@
         <h1
           class="justify-center flex text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
         >
-          Add Items
+          Map items and products
         </h1>
         <form class="max-w-md mx-auto">
-          <textbox
-            type="text"
-            name="itemname"
-            id="itemname"
-            placeholder=""
-            required
-            labeltext="Item Name"
-          ></textbox>
+          
           <dropdown
-            id="category"
-            labeltext="Category"
-            :options="categories"
+            id="product"
+            labeltext="product"
+            :options="products"
             class="mt-5"
           ></dropdown>
-          <dropdown id="unit" labeltext="unit" :options="units" class="mt-5"></dropdown>
-          <textbox
-            type="number"
-            name="baseprice"
-            id="baseprice"
-            placeholder=""
-            required
-            labeltext="Base price"
-          ></textbox>
+          <dropdown
+            id="item"
+            labeltext="item"
+            :options="products"
+            class="mt-5"
+          ></dropdown>
+          
         </form>
       </div>
     </template>
@@ -82,7 +73,7 @@
   </div>
 
   <div class="listview m-2 border-solid border-2 border-indigo-300 rounded-lg">
-    <h1 class="flex text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white p-2">Existing items</h1>
+    <h1 class="flex text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white p-2">Existing mapping</h1>
     <vue3-datatable
       :rows="rows"
       :columns="cols"
@@ -121,20 +112,7 @@ import '@bhplugin/vue3-datatable/dist/style.css'
 import { ref, reactive, onMounted } from 'vue'
 
 let toggleModal = ref(false)
-const categories = ref([
-  {
-    value: '1',
-    text: 'Category 1'
-  },
-  {
-    value: '2',
-    text: 'Category 2'
-  },
-  {
-    value: '3',
-    text: 'Category 3'
-  }
-])
+
 
 const units = ref([
   {

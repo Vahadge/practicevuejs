@@ -1,32 +1,32 @@
 <template>
   <div class="parent relative z-50">
-    <div class="z-50 absolute">
+    <div class="z-50 absolute -mt-10 lg:mt-1">
       <SidebarNav></SidebarNav>
     </div>
     <div class="top-20 w-full">
-      <div class="w-full flex justify-center">
+      <div class="w-full lg:flex justify-center ">
         <Breadcrumb :breadcrumblinks="JSON.stringify(routes)"></Breadcrumb>
       </div>
 
       <div class="grid grid-flow-row lg:grid-flow-col m-10">
         <div
-          class="bg-gradient-to-t from-red-100 to-pink-50 max-w-full w-full lg:w-11/12 flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-4 bg-gray-100"
+          class="bg-red-500 opacity-90 max-w-full w-full lg:w-11/12 flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-4 "
         >
           <div>
             <a href="#">
              
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-3xl text-center font-bold  tracking-tight text-white dark:text-white">
                 <RouterLink to='/ConfigurationManagement'>Configuration management</RouterLink>
               </h5>
             </a>
           </div>
         </div>
         <div
-          class="bg-gradient-to-t from-red-100 to-pink-50 max-w-full w-full lg:w-11/12 flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-4 bg-gray-100"
+          class="bg-green-500 max-w-full w-full lg:w-11/12 flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-4 "
         >
           <div class="">
             <a href="#">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-3xl text-center font-bold  tracking-tight text-white dark:text-white">
                 Income/Expense
               </h5>
             </a>
@@ -35,11 +35,11 @@
           </div>
         </div>
         <div
-          class="bg-gradient-to-t from-red-100 to-pink-50 max-w-full w-full lg:w-11/12 flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-4 bg-gray-100"
+          class="bg-blue-500 max-w-full w-full lg:w-11/12 flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-4 "
         >
           <div class="">
             <a href="#">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-3xl text-center font-bold  tracking-tight text-white dark:text-white">
                 Order tracking
               </h5>
             </a>
